@@ -29,3 +29,7 @@ Route::get('/test',[\App\Http\Controllers\HomeController::class,'test'])->name('
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+//******************************* ADMIN ******************************************//
+Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin');
+
