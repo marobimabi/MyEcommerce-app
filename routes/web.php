@@ -30,6 +30,10 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-//******************************* ADMIN ******************************************//
+//******************************* ADMIN panel ******************************************//
 Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin');
+
+//******************************* ADMIN panel ******************************************//
+Route::get('/admin/category',[\App\Http\Controllers\Admin\CategoryController::class,'index'])->name('admin_category');
+Route::get('/admin/category/create',[\App\Http\Controllers\Admin\CategoryController::class,'create'])->name('admin_category_create');
 
