@@ -12,7 +12,7 @@
         <div class="">
             <div class="page-title">
                 <div class="title_left">
-                    <a href="" class="btn btn-secondary btn-sm" ">Add Category</a>
+                    <a href="" class="btn btn-secondary btn-sm" ">Create Category</a>
                 </div>
             </div>
 
@@ -39,6 +39,30 @@
                         </div>
                         <div class="x_content">
                             <!-- table -->
+
+                            <!-- start form for validation -->
+                            <form role="form" action="admin/Categorry/store" method="post">
+                               @csrf
+
+                                <br />
+                                <label for="fullname">Title * :</label>
+                                <input type="text" id="fullname" class="form-control" name="title"  />
+                                <br />
+                                <label for="fullname">Keywords * :</label>
+                                <input type="text" id="fullname" class="form-control" name="keywords"   />
+                                <br />
+                                <label for="fullname">Description * :</label>
+                                <input type="text" id="fullname" class="form-control" name="description"/>
+                                <br />
+                                <label for="fullname">Status * :</label>
+                                <select class="form-control" >
+                                    <option>True</option>
+                                    <option>False</option>
+                                </select>
+                                <br />
+
+                                <button class="btn btn-primary"><span>Update Category</span></button>
+                            </form>
 
                         </div>
                     </div>
