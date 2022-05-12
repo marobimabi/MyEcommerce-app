@@ -12,7 +12,7 @@
         <div class="">
             <div class="page-title">
                 <div class="title_left">
-                    <a href="" class="btn btn-secondary btn-sm" ">Create Category</a>
+                    <a href="" class="btn btn-secondary btn-sm">Create Category</a>
                 </div>
             </div>
 
@@ -41,12 +41,15 @@
                             <!-- table -->
 
                             <!-- start form for validation -->
-                            <form role="form" action="admin/Categorry/store" method="post">
+                            <form role="form" action="store" method="post">
                                @csrf
 
                                 <br />
                                 <label for="fullname">Title * :</label>
                                 <input type="text" id="fullname" class="form-control" name="title"  />
+                                <br />
+                                <label for="fullname">Category * :</label>
+                                <input type="text" id="fullname" class="form-control" name="parent_id"  />
                                 <br />
                                 <label for="fullname">Keywords * :</label>
                                 <input type="text" id="fullname" class="form-control" name="keywords"   />
@@ -54,8 +57,11 @@
                                 <label for="fullname">Description * :</label>
                                 <input type="text" id="fullname" class="form-control" name="description"/>
                                 <br />
-                                <label for="fullname">Status * :</label>
-                                <select class="form-control" >
+                                <label for="fullname">Image * :</label>
+                                <input type="file" id="fullname" class="form-control" name="image"/>
+                                <br />
+                                <label for="fullname"  >Status * :</label>
+                                <select class="form-control"  name="status">
                                     <option>True</option>
                                     <option>False</option>
                                 </select>

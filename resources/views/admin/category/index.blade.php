@@ -39,6 +39,7 @@
                         </div>
                         <div class="x_content">
                             <!-- table -->
+            <!-- /page content -->
 
                         </div>
                     </div>

@@ -36,5 +36,5 @@ Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class,'index'])
 //******************************* ADMIN Category ******************************************//
 Route::get('/admin/category',[\App\Http\Controllers\Admin\CategoryController::class,'index'])->name('admin_category');
 Route::get('/admin/category/create',[\App\Http\Controllers\Admin\CategoryController::class,'create'])->name('admin_category_create');
-Route::get('/admin/category/store',[\App\Http\Controllers\Admin\CategoryController::class,'create'])->name('admin_category_store');
+Route::post('/admin/category/store',[\App\Http\Controllers\Admin\CategoryController::class,'store'])->name('admin_category_store');
 
