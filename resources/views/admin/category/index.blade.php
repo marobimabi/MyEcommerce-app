@@ -49,6 +49,7 @@
                                         <th>Title</th>
                                         <th>Keywords</th>
                                         <th>descrition</th>
+                                        <th>image</th>
                                         <th>Status</th>
                                         <th>Edit</th>
                                         <th>Delete</th>
@@ -63,6 +64,10 @@
                                             <td>{{$rs->title}}</td>
                                             <td>{{$rs->keywords}}</td>
                                             <td>{{$rs->description}}</td>
+                                            <td>
+                                            @if($rs->image)
+                                                <img src="{{Storage::url($rs->image)}}" style="height: 40px">@endif
+                                            </td>
                                             <td>{{$rs->status}}</td>
                                             <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-info btn-xs" ><i class="fa fa-pencil"></i>Edit</a></td>
                                             <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are You Sire?')" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a></td>

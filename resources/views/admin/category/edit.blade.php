@@ -41,7 +41,7 @@
                             <!-- table -->
 
                             <!-- start form for validation -->
-                            <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}} method="post">
+                            <form role="form" action="{{route('admin.category.update',['id'=>$data->id])}}" method="post" enctype="multipart/form-data">
                                @csrf
 
                                 <br />
