@@ -12,7 +12,7 @@
         <div class="">
             <div class="page-title">
                 <div class="title_left">
-                    <a href="/admin/category/create" class="btn btn-secondary btn-sm">Add Category</a>
+                    <a href="{{route('admin.category.create')}}" class="btn btn-secondary btn-sm">Add Category</a>
                 </div>
             </div>
 
@@ -62,11 +62,11 @@
                                             <td>{{$rs->parent_id}}</td>
                                             <td>{{$rs->title}}</td>
                                             <td>{{$rs->keywords}}</td>
-                                            <td>{{$rs->description}}</td> 
+                                            <td>{{$rs->description}}</td>
                                             <td>{{$rs->status}}</td>
-                                            <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-info btn-xs" ><i class="fa fa-pencil"></i>Edit</a></td>
-                                            <td><a href="/admin/category/delete/{{$rs->id}}" onclick="return confirm('Delete ! Are You Sire?')" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a></td>
-                                            <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-info btn-xs" ><i class="fa fa-pencil"></i>Show</a></td>
+                                            <td><a href="{{route('admin.category.edit',['id'=>$rs->id])}}" class="btn btn-info btn-xs" ><i class="fa fa-pencil"></i>Edit</a></td>
+                                            <td><a href="{{route('admin.category.destroy',['id'=>$rs->id])}}" onclick="return confirm('Delete ! Are You Sire?')" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a></td>
+                                            <td><a href="{{route('admin.category.show',['id'=>$rs->id])}}" class="btn btn-info btn-xs" ><i class="fa fa-pencil"></i>Show</a></td>
 
                                         </tr>
                                     @endforeach

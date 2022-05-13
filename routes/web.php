@@ -31,15 +31,19 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 })->name('dashboard');
 
 //******************************* ADMIN panel ******************************************//
-Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('admin');
 
+Route::prefix('admin')->name('admin.')->group(function (){
+//******************************* ADMIN panel ******************************************//
+Route::get('/',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('index');
+        Route::prefix('/category')->name('category.')->controller(\App\Http\Controllers\Admin\CategoryController::class)->group(function () {
 //******************************* ADMIN Category ******************************************//
-Route::get('/admin/category',[\App\Http\Controllers\Admin\CategoryController::class,'index'])->name('admin_category');
-Route::get('/admin/category/create',[\App\Http\Controllers\Admin\CategoryController::class,'create'])->name('admin_category_create');
-Route::post('/admin/category/store',[\App\Http\Controllers\Admin\CategoryController::class,'store'])->name('admin_category_store');
-Route::get('/admin/category/edit/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'edit'])->name('admin_category_edit');
-Route::get('/admin/category/update/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'update'])->name('admin_category_update');
-Route::get('/admin/category/show/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'show'])->name('admin_category_show');
-Route::get('/admin/category/delete/{id}',[\App\Http\Controllers\Admin\CategoryController::class,'destroy'])->name('admin_category_delete');
+        Route::get('/',  'index')->name('index');
+        Route::get('/create', 'create')->name('create');
+        Route::post('/store','store')->name('store');
+        Route::get('/edit/{id}', 'edit')->name('edit');
+        Route::get('/update/{id}', 'update')->name('update');
+        Route::get('/show/{id}', 'show')->name('show');
+        Route::get('/delete/{id}', 'destroy')->name('destroy');
 
-
+    });
+});

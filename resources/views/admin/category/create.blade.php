@@ -41,7 +41,7 @@
                             <!-- table -->
 
                             <!-- start form for validation -->
-                            <form role="form" action="/admin/category/store" method="post">
+                            <form role="form" action="{{route('admin.category.store')}}" method="post">
                                @csrf
 
                                 <br />

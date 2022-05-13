@@ -13,7 +13,7 @@
         <div class="">
             <div class="page-title">
                 <div class="title_left">
-                    <a href="/admin/category/create" class="btn btn-secondary btn-sm">Add Category</a>
+                    <a href="{{route('admin.category.create')}}" class="btn btn-secondary btn-sm">Add Category</a>
                 </div>
             </div>
 
