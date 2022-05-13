@@ -3,8 +3,9 @@
 @section('title', 'Category List')
 
 @section('sidebar')
-    @parent
+
 @stop
+
 
 @section('content')
     <!-- page content -->
@@ -45,31 +46,31 @@
                                     <thead>
                                     <tr>
                                         <th>Id</th>
-                                        <th>Parent</th>
                                         <th>Title</th>
                                         <th>Keywords</th>
                                         <th>descrition</th>
+                                        <th>Image</th>
                                         <th>Status</th>
-                                        <th>Edit</th>
-                                        <th>Delete</th>
-                                        <th>Show</th>
+                                        <th>Created Date</th>
+                                        <th>Updated Date</th>
+
+
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($data as $rs)
+
                                         <tr>
-                                            <td>{{$rs->id}}</td>
-                                            <td>{{$rs->parent_id}}</td>
-                                            <td>{{$rs->title}}</td>
-                                            <td>{{$rs->keywords}}</td>
-                                            <td>{{$rs->description}}</td> 
-                                            <td>{{$rs->status}}</td>
-                                            <td><a href="/admin/category/edit/{{$rs->id}}" class="btn btn-info btn-xs" ><i class="fa fa-pencil"></i>Edit</a></td>
-                                            <td><a href="/admin/category/delete/{{$rs->id}}" onclick="return confirm('Delete ! Are You Sire?')" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a></td>
-                                            <td><a href="/admin/category/show/{{$rs->id}}" class="btn btn-info btn-xs" ><i class="fa fa-pencil"></i>Show</a></td>
+                                            <td>{{$data->id}}</td>
+                                            <td>{{$data->title}}</td>
+                                            <td>{{$data->keywords}}</td>
+                                            <td>{{$data->description}}</td>
+                                            <td>{{$data->image}}</td>
+                                            <td>{{$data->status}}</td>
+                                            <td>{{$data->created_at}}</td>
+                                            <td>{{$data->updated_at}}</td>
 
                                         </tr>
-                                    @endforeach
+
                                     </tbody>
                                 </table>
                                 <!--- end table -->
